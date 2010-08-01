@@ -7,6 +7,8 @@ set :deploy_to, '/kunden/homepages/5/d327710419/htdocs/cap'
 
 role :web, 'dphen3.com'
 
+# We are overriding this task so that the default Railsy capistrano task
+# doesn't try to create symlinks to certain directories.
 namespace :deploy do
   task :finalize_update do ; end
 end
