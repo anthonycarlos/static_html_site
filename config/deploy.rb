@@ -12,3 +12,9 @@ role :web, 'dphen3.com'
 namespace :deploy do
   task :finalize_update do ; end
 end
+
+# We are overriding this task so that the default Railsy capistrano task
+# doesn't try to run ./script/process/reaper.
+namespace :deploy do
+  task :restart do; end
+end
